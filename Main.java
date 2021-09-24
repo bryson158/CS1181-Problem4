@@ -25,17 +25,15 @@ public class Main {
         convertButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                double fahrenheit = 0;
-                double celsius = 0;
+                double fahrenheit;
+                double celsius;
                 //Determines if the user entered a valid number and converts the value to either celsius or fahrenheit
                 if(fahrenheitTextbox.getText().length() > 0){
                     try {
                         fahrenheit = Double.parseDouble(fahrenheitTextbox.getText());
 
-                        celsius = (fahrenheit - 32) * (5/9);
+                        celsius = (fahrenheit - 32) * 5/9;
                         String temp = String.valueOf(celsius);
-                        System.out.println(temp);
-                        System.out.println(celsius);
 
                         celsiusTextbox.setText(String.valueOf(temp));
                     }
@@ -47,7 +45,7 @@ public class Main {
                     try {
                        celsius = Double.parseDouble(celsiusTextbox.getText());
 
-                       fahrenheit = (celsius * (9/5)) + 52;
+                       fahrenheit = (celsius * 9/5) + 32;
 
                        fahrenheitTextbox.setText(String.valueOf(fahrenheit));
                     }
